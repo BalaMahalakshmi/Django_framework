@@ -10,3 +10,12 @@ def inventory_home(request):
         "city":{"MB":"Theni", "MA":"UDT"},
     }
     return render(request, 'index.html', context)
+
+def inventory_about(request):
+    return render(request, 'about.html')
+
+def inventory_services(request):
+    return render(request, 'services.html')
+
+def inventory_contact(request):
+    return render(request, 'contact.html')
