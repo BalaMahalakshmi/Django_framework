@@ -27,4 +27,10 @@ def inventory_products(request):
     context = {
         "products": productForm()
     }   
+
+    if request.method == "POST":
+        proForm = productForm(request.POST)
+        if proForm.is_valid():
+            proForm.save()
+       
     return render(request, 'products.html', context)
