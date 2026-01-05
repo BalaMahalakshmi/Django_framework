@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import *
+from .forms import *
 
 def inventory_home(request):
 
@@ -19,3 +21,10 @@ def inventory_services(request):
 
 def inventory_contact(request):
     return render(request, 'contact.html')
+
+def inventory_products(request):
+
+    context = {
+        "products": productForm()
+    }   
+    return render(request, 'products.html', context)
